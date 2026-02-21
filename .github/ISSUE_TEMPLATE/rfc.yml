@@ -12,6 +12,14 @@ body:
     attributes:
       label: Is this related to an existing feature request or issue?
       description: Please share a link, if applicable
+  - type: input
+    id: codeowners
+    attributes:
+      label: Codeowners
+      description: Please provide the GitHub alias(es) of the person(s) who will own this RFC and any resulting implementation (e.g. @username). Separate multiple aliases with a comma.
+      placeholder: "@alias1, @alias2"
+    validations:
+      required: true
   - type: textarea
     id: summary
     attributes:
