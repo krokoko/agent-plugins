@@ -8,6 +8,14 @@ body:
       value: |
         Thank you for submitting a RFC. Please add as many details as possible to help further enrich this design.
   - type: input
+    id: codeowner
+    attributes:
+      label: Code Owner
+      description: Please provide your GitHub alias (e.g. @username). This will be used to identify the owner of this RFC.
+      placeholder: "@username"
+    validations:
+      required: true
+  - type: input
     id: relation
     attributes:
       label: Is this related to an existing feature request or issue?
