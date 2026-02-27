@@ -8,14 +8,6 @@ body:
       value: |
         Thank you for submitting a RFC. Please add as many details as possible to help further enrich this design.
   - type: input
-    id: codeowners
-    attributes:
-      label: Code Owners
-      description: Please provide your GitHub alias to indicate ownership of this RFC (e.g., @username)
-      placeholder: "@username"
-    validations:
-      required: true
-  - type: input
     id: relation
     attributes:
       label: Is this related to an existing feature request or issue?
@@ -23,8 +15,8 @@ body:
   - type: input
     id: codeowners
     attributes:
-      label: Code owners
-      description: Please indicate the GitHub alias(es) of the people who will own and maintain this feature (e.g. @alias1, @alias2)
+      label: Codeowners
+      description: Please indicate the GitHub alias(es) of the codeowner(s) responsible for this RFC (e.g. @alias)
       placeholder: "@alias"
     validations:
       required: true
@@ -77,14 +69,6 @@ body:
       label: Alternative solutions
       description: Please describe what alternative solutions to this use case, if any
       render: markdown
-    validations:
-      required: false
-  - type: input
-    id: codeowners
-    attributes:
-      label: Code owners
-      description: Please indicate the GitHub alias(es) of the code owner(s) responsible for this RFC (e.g. @username)
-      placeholder: "@alias1, @alias2"
     validations:
       required: false
   - type: markdown
