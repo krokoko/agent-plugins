@@ -12,6 +12,14 @@ body:
     attributes:
       label: Is this related to an existing feature request or issue?
       description: Please share a link, if applicable
+  - type: input
+    id: codeowners
+    attributes:
+      label: Code owners
+      description: Please tag the GitHub team(s) or user(s) who will own the code introduced by this RFC (e.g. @org/team-name)
+      placeholder: "@org/team-name"
+    validations:
+      required: false
   - type: textarea
     id: summary
     attributes:
