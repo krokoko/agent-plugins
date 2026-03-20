@@ -63,6 +63,14 @@ body:
       render: markdown
     validations:
       required: false
+  - type: input
+    id: codeowners
+    attributes:
+      label: Codeowners
+      description: Please provide the GitHub alias(es) of the codeowner(s) for this RFC (e.g. @username)
+      placeholder: "@username"
+    validations:
+      required: true
   - type: markdown
     attributes:
       value: |
