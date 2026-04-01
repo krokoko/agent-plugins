@@ -63,6 +63,14 @@ body:
       render: markdown
     validations:
       required: false
+  - type: input
+    id: codeowners
+    attributes:
+      label: Code owners
+      description: Please tag the GitHub teams or users responsible for reviewing this RFC (e.g. @awslabs/agent-plugins-maintainers)
+      placeholder: "@awslabs/agent-plugins-maintainers"
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: |
