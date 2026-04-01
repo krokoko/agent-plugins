@@ -63,6 +63,14 @@ body:
       render: markdown
     validations:
       required: false
+  - type: input
+    id: codeowners
+    attributes:
+      label: Code owners
+      description: GitHub usernames of the code owners for this RFC (e.g. @username1, @username2)
+      placeholder: "@username"
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: |
