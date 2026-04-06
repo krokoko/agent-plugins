@@ -8,6 +8,12 @@ body:
       value: |
         Thank you for submitting a RFC. Please add as many details as possible to help further enrich this design.
   - type: input
+    id: codeowner
+    attributes:
+      label: Codeowner
+      description: Please specify the GitHub username or team (e.g. @username or @org/team) responsible for this RFC
+      placeholder: "@username or @org/team"
+  - type: input
     id: relation
     attributes:
       label: Is this related to an existing feature request or issue?
