@@ -63,6 +63,14 @@ body:
       render: markdown
     validations:
       required: false
+  - type: input
+    id: codeowners
+    attributes:
+      label: Code owners
+      description: Please tag the relevant code owners or maintainers for this proposal (e.g. @awslabs/agent-plugins-maintainers)
+      placeholder: "@username or @org/team"
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: |
