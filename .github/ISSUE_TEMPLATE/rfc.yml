@@ -70,7 +70,7 @@ body:
       description: GitHub username(s) of the codeowner(s) responsible for this feature. Add one per line (e.g. @username)
       placeholder: "@username1\n@username2"
     validations:
-      required: false
+      required: true
   - type: markdown
     attributes:
       value: |
