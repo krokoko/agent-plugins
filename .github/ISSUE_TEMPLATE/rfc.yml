@@ -63,12 +63,12 @@ body:
       render: markdown
     validations:
       required: false
-  - type: input
-    id: codeowner
+  - type: textarea
+    id: codeowners
     attributes:
-      label: Codeowner
-      description: GitHub username of the codeowner responsible for this feature (e.g. @username)
-      placeholder: "@username"
+      label: Codeowners
+      description: GitHub username(s) of the codeowner(s) responsible for this feature. Add one per line (e.g. @username)
+      placeholder: "@username1\n@username2"
     validations:
       required: false
   - type: markdown
