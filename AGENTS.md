@@ -138,7 +138,7 @@ agent-plugins/
 
 ## Default Service Selections
 
-- Web frameworks → Fargate + ALB (not Lambda - cold starts break WSGI frameworks)
+- Web frameworks & containerized APIs → **Amazon ECS Express Mode** + ALB (not Lambda - cold starts break WSGI frameworks; ECS Express Mode enables rapid deployment of containerized web applications and APIs)
 - Static sites/SPAs → Amplify Hosting (not S3+CloudFront - too much config)
 - Databases → Aurora Serverless v2 (scales to near-zero in dev)
 - IaC → CDK TypeScript (most expressive, best IDE support)

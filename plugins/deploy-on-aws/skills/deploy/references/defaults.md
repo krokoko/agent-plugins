@@ -4,19 +4,25 @@ Default AWS service selections. Override only when user explicitly requests alte
 
 ## Compute
 
-| App Pattern                                           | Default              | Override Trigger                         |
-| ----------------------------------------------------- | -------------------- | ---------------------------------------- |
-| Web framework (Django, Rails, Express, FastAPI, etc.) | Fargate + ALB        | "serverless" → Lambda + API Gateway      |
-| Static site / SPA                                     | Amplify Hosting      | "S3" or "more control" → S3 + CloudFront |
-| Background workers                                    | Fargate              | Short tasks (<15min) → Lambda            |
-| Scheduled jobs                                        | EventBridge + Lambda | Long-running → EventBridge + Fargate     |
-| API-only (no web UI)                                  | Fargate + ALB        | "serverless" → API Gateway + Lambda      |
+| App Pattern                                           | Default                | Override Trigger                         |
+| ----------------------------------------------------- | ---------------------- | ---------------------------------------- |
+| Web framework (Django, Rails, Express, FastAPI, etc.) | ECS Express Mode + ALB | "serverless" → Lambda + API Gateway      |
+| Static site / SPA                                     | Amplify Hosting        | "S3" or "more control" → S3 + CloudFront |
+| Background workers                                    | ECS Express Mode       | Short tasks (<15min) → Lambda            |
+| Scheduled jobs                                        | EventBridge + Lambda   | Long-running → EventBridge + ECS         |
+| API-only (no web UI)                                  | ECS Express Mode + ALB | "serverless" → API Gateway + Lambda      |
 
-### Why Fargate over Lambda for web frameworks
+### Why ECS Express Mode for containerized web apps and APIs
 
-Most web frameworks (Django, Rails, Flask with WSGI) expect long-running processes.
-Lambda's cold starts and request/response model require adapters and introduce latency.
-Fargate provides a more natural fit without framework modifications.
+**Amazon ECS Express Mode** is the recommended default for rapidly launching containerized
+web applications and APIs. ECS Express Mode empowers developers to quickly deploy
+containerized workloads with simplified configuration, automatic capacity management, and
+fast launch times — without the overhead of managing EC2 instances.
+
+Most web frameworks (Django, Rails, Flask with WSGI, Express, FastAPI, etc.) expect
+long-running processes. Lambda's cold starts and request/response model require adapters
+and introduce latency. ECS Express Mode provides a more natural fit without framework
+modifications, while also enabling rapid iteration and deployment cycles.
 
 ### Why Amplify for static sites/SPAs
 
@@ -81,7 +87,7 @@ type safety without requiring Python/Java knowledge. If user's repo already has
 
 | Component         | Dev           | Production     |
 | ----------------- | ------------- | -------------- |
-| Fargate           | 0.5 vCPU, 1GB | 1+ vCPU, 2+ GB |
+| ECS Express Mode  | 0.5 vCPU, 1GB | 1+ vCPU, 2+ GB |
 | Aurora Serverless | 0.5-2 ACU     | 2-16+ ACU      |
 | ALB               | Single AZ OK  | Multi-AZ       |
 
