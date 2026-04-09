@@ -63,6 +63,17 @@ body:
       render: markdown
     validations:
       required: false
+  - type: textarea
+    id: codeowners
+    attributes:
+      label: Codeowners
+      description: |
+        Please list the GitHub team(s) or individual(s) who should own this feature or plugin.
+        These will be added to the `.github/CODEOWNERS` file upon implementation.
+        Example: `@awslabs/agent-plugins-maintainers @awslabs/agent-plugins-my-plugin-team`
+      placeholder: "@org/team-name"
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: |
@@ -75,3 +86,4 @@ body:
         * RFC PR:
         * Approved by: ''
         * Reviewed by: ''
+        * Codeowner file: ''
