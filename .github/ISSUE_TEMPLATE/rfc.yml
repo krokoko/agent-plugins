@@ -56,6 +56,14 @@ body:
     validations:
       required: false
   - type: textarea
+    id: codeowners
+    attributes:
+      label: Codeowners
+      description: Please list the GitHub usernames or teams who will own and maintain the code introduced by this RFC (e.g. `@username` or `@org/team`). A corresponding entry in [CODEOWNERS](../../.github/CODEOWNERS) must be added as part of the implementation PR.
+      placeholder: "@username or @org/team"
+    validations:
+      required: false
+  - type: textarea
     id: alternatives
     attributes:
       label: Alternative solutions
