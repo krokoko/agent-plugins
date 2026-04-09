@@ -66,11 +66,11 @@ body:
   - type: textarea
     id: codeowners
     attributes:
-      label: Codeowners
-      description: GitHub username(s) of the codeowner(s) responsible for this feature. Add one per line (e.g. @username)
+      label: Feature Owner(s)
+      description: "GitHub username(s) of the codeowner(s) responsible for this feature. Add one per line (e.g. @username). Leave blank if unknown — maintainers will assign during triage."
       placeholder: "@username1\n@username2"
     validations:
-      required: true
+      required: false
   - type: markdown
     attributes:
       value: |
