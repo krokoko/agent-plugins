@@ -69,9 +69,13 @@ body:
       label: Codeowners
       description: |
         Please list the GitHub team(s) or individual(s) who should own this feature or plugin.
-        These will be added to the `.github/CODEOWNERS` file upon implementation.
-        Example: `@awslabs/agent-plugins-maintainers @awslabs/agent-plugins-my-plugin-team`
-      placeholder: "@org/team-name"
+        These should be added to the `.github/CODEOWNERS` file upon implementation (one entry per line).
+        Example:
+        `@awslabs/agent-plugins-maintainers`
+        `@awslabs/agent-plugins-my-plugin-team`
+      placeholder: |
+        @org/team-name
+        @org/another-team
     validations:
       required: false
   - type: markdown
