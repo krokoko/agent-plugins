@@ -73,5 +73,6 @@ body:
         Metadata information for admin purposes, please leave them empty.
 
         * RFC PR:
+        * Codeowner: ''
         * Approved by: ''
         * Reviewed by: ''
