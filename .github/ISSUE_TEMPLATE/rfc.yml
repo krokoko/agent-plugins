@@ -63,6 +63,13 @@ body:
       render: markdown
     validations:
       required: false
+  - type: input
+    id: codeowner
+    attributes:
+      label: Codeowner file
+      description: Please provide the GitHub team that will own this code (e.g., @awslabs/my-plugin-team). A new entry will be added to CODEOWNERS upon approval.
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: |
@@ -75,3 +82,4 @@ body:
         * RFC PR:
         * Approved by: ''
         * Reviewed by: ''
+        * Codeowner file:
