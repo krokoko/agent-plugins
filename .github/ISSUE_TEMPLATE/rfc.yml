@@ -63,6 +63,14 @@ body:
       render: markdown
     validations:
       required: false
+  - type: input
+    id: codeowner
+    attributes:
+      label: Codeowner
+      description: Please specify the GitHub team that should own this plugin or change (e.g. `@awslabs/agent-plugins-maintainers`). See [CODEOWNERS](../../.github/CODEOWNERS) for existing teams.
+      placeholder: "@awslabs/agent-plugins-maintainers"
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: |
@@ -75,3 +83,4 @@ body:
         * RFC PR:
         * Approved by: ''
         * Reviewed by: ''
+        * Codeowner: ''
