@@ -63,6 +63,14 @@ body:
       render: markdown
     validations:
       required: false
+  - type: input
+    id: codeowner
+    attributes:
+      label: Codeowner
+      description: Please specify the GitHub team or user responsible for owning this code (e.g., `@krokoko/maintainers`)
+      placeholder: "@org/team"
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: |
@@ -75,3 +83,4 @@ body:
         * RFC PR:
         * Approved by: ''
         * Reviewed by: ''
+        * Codeowner: ''
