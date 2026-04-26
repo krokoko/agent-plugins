@@ -12,6 +12,14 @@ body:
     attributes:
       label: Is this related to an existing feature request or issue?
       description: Please share a link, if applicable
+  - type: input
+    id: codeowner
+    attributes:
+      label: Codeowner file
+      description: Please specify the codeowner file or team responsible for this area (e.g. `plugins/deploy-on-aws` or `@awslabs/agent-plugins-maintainers`)
+      placeholder: e.g. plugins/my-plugin or @awslabs/agent-plugins-maintainers
+    validations:
+      required: false
   - type: textarea
     id: summary
     attributes:
