@@ -12,6 +12,11 @@ body:
     attributes:
       label: Is this related to an existing feature request or issue?
       description: Please share a link, if applicable
+  - type: input
+    id: codeowner
+    attributes:
+      label: Codeowner
+      description: Please share the GitHub username or team (e.g. `@octocat` or `@org/team`) responsible for the affected area. See [CODEOWNERS](https://github.com/krokoko/agent-plugins/blob/main/.github/CODEOWNERS) for reference.
   - type: textarea
     id: summary
     attributes:
@@ -73,5 +78,6 @@ body:
         Metadata information for admin purposes, please leave them empty.
 
         * RFC PR:
+        * Codeowner: ''
         * Approved by: ''
         * Reviewed by: ''
