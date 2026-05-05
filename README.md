@@ -320,6 +320,8 @@ Big shout out to our awesome contributors! Thank you for making this project bet
 
 Contributions of all kinds are welcome! Check out our [contributor guide](./CONTRIBUTING.md) for more information.
 
+For larger changes, please open a [Request for Comments (RFC)](https://github.com/krokoko/agent-plugins/issues/new?template=rfc.yml) issue first. The RFC template includes a **Codeowner** field in its metadata section — maintainers use this to identify who owns the relevant area of the codebase.
+
 ## Developer guide
 
 If you want to add a new plugin to the library, check out our [design guidelines](./docs/DESIGN_GUIDELINES.md) and [development guide](./docs/DEVELOPMENT_GUIDE.md).
