@@ -63,6 +63,16 @@ body:
       render: markdown
     validations:
       required: false
+  - type: textarea
+    id: codeowners
+    attributes:
+      label: Code Ownership
+      description: |
+        Please specify the GitHub team(s) that will own the code introduced by this proposal. This will be used to update the [CODEOWNERS](.github/CODEOWNERS) file.
+        Only GitHub teams are accepted (no individual users). Example: `@awslabs/agent-plugins-my-team`
+      placeholder: "@awslabs/agent-plugins-my-team"
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: |
