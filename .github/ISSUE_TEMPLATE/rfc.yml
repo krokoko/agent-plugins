@@ -63,6 +63,14 @@ body:
       render: markdown
     validations:
       required: false
+  - type: input
+    id: codeowner
+    attributes:
+      label: Codeowner
+      description: Please provide the GitHub team that will own this plugin/feature (e.g. `@awslabs/agent-plugins-<team-name>`). See [CODEOWNERS](../../.github/CODEOWNERS) for examples.
+      placeholder: "@awslabs/agent-plugins-<team-name>"
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: |
