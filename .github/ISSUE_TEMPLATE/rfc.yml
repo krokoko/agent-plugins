@@ -63,6 +63,14 @@ body:
       render: markdown
     validations:
       required: false
+  - type: input
+    id: codeowners
+    attributes:
+      label: New CODEOWNERS file
+      description: If this proposal introduces a new plugin or major component, please specify the GitHub team that will own this code (e.g., `@awslabs/agent-plugins-my-new-plugin`)
+      placeholder: "@awslabs/agent-plugins-"
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: |
