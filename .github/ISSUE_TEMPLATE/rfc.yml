@@ -63,6 +63,14 @@ body:
       render: markdown
     validations:
       required: false
+  - type: input
+    id: codeowners
+    attributes:
+      label: New CODEOWNERS entry
+      description: If this RFC introduces new files or a new plugin directory, please specify the GitHub team(s) that should own it (e.g. `@awslabs/agent-plugins-my-team`). Leave empty if no new ownership entry is needed.
+      placeholder: "@awslabs/agent-plugins-<team-name>"
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: |
