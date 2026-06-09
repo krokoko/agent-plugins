@@ -67,7 +67,7 @@ body:
     id: codeowners
     attributes:
       label: New CODEOWNERS entry
-      description: If this RFC introduces new files or a new plugin directory, please specify the GitHub team(s) that should own it (e.g. `@awslabs/agent-plugins-my-team`). Leave empty if no new ownership entry is needed.
+      description: If this RFC introduces a new plugin directory, specify only the new plugin-specific GitHub team (e.g. `@awslabs/agent-plugins-my-team`). Admins and maintainers ownership will be added automatically per convention. Leave empty if no new ownership entry is needed.
       placeholder: "@awslabs/agent-plugins-<team-name>"
     validations:
       required: false
