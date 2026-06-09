@@ -63,6 +63,14 @@ body:
       render: markdown
     validations:
       required: false
+  - type: input
+    id: codeowners
+    attributes:
+      label: CODEOWNERS entry
+      description: Please specify the GitHub team(s) that should own this new plugin or feature (e.g. `@awslabs/agent-plugins-admins @awslabs/agent-plugins-my-team`). Only GitHub teams are allowed — no individual users.
+      placeholder: "@awslabs/agent-plugins-admins @awslabs/agent-plugins-my-team"
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: |
