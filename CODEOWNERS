@@ -1,0 +1,49 @@
+# [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners#about-code-owners)
+
+## Default owners for everything in the repo
+
+*                                   @krokoko
+
+## Adminstrators
+
+.bandit-baseline.json               @krokoko
+.claude-plugin/                     @krokoko
+.github/                            @krokoko
+.gitignore                          @krokoko
+.gitleaks-baseline.json             @krokoko
+.gitleaks.toml                      @krokoko
+.gitleaksignore                     @krokoko
+.markdownlint-cli2.yaml             @krokoko
+AGENTS.md                           @krokoko
+CLAUDE.md                           @krokoko
+CODE_OF_CONDUCT.md                  @krokoko
+CONTRIBUTING.md                     @krokoko
+docs/                               @krokoko
+dprint.json                         @krokoko
+LICENSE                             @krokoko
+mise.toml                           @krokoko
+NOTICE                              @krokoko
+plugins/                            @krokoko
+README.md                           @krokoko
+schemas/                            @krokoko
+tools/                              @krokoko
+
+## Plugins (alphabetically listed)
+
+plugins/amazon-location-service     @krokoko
+plugins/aws-amplify                 @krokoko
+plugins/aws-serverless              @krokoko
+plugins/aws-transform               @krokoko
+plugins/codebase-documentor-for-aws @krokoko
+plugins/databases-on-aws            @krokoko
+plugins/deploy-on-aws               @krokoko
+plugins/migration-to-aws            @krokoko
+plugins/sagemaker-ai                @krokoko
+
+## Evals (match plugin ownership)
+
+tools/evals/databases-on-aws        @krokoko
+
+## File must end with CODEOWNERS file
+
+CODEOWNERS                          @krokoko
