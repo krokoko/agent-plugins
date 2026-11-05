@@ -129,6 +129,28 @@ def test_integer_rejects_injection(payload):
         integer(payload)
 
 
+def test_integer_rejects_float_values():
+    """integer() must reject floats, even those with whole-number values."""
+    with pytest.raises(UnsafeSQLError):
+        integer(0.0)
+    with pytest.raises(UnsafeSQLError):
+        integer(42.0)
+    with pytest.raises(UnsafeSQLError):
+        integer(-42.0)
+    with pytest.raises(UnsafeSQLError):
+        integer(3.5)
+
+
+def test_integer_rejects_scientific_notation_strings():
+    """integer() must reject scientific-notation strings rather than coerce them."""
+    with pytest.raises(UnsafeSQLError):
+        integer("1e3")
+    with pytest.raises(UnsafeSQLError):
+        integer("-2E4")
+    with pytest.raises(UnsafeSQLError):
+        integer("3.0e2")
+
+
 @pytest.mark.parametrize("payload", ["x' OR 1=1 --", "it's", "'"])
 def test_regex_rejects_embedded_single_quote(payload):
     """regex() must reject values containing ' even if the pattern matches.
