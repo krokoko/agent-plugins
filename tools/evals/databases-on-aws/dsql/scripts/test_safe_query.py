@@ -129,6 +129,22 @@ def test_integer_rejects_injection(payload):
         integer(payload)
 
 
+def test_integer_accepts_signed_bigint_boundary_strings():
+    """integer() must accept signed 64-bit boundary values given as strings."""
+    for value in ("9223372036854775807", "-9223372036854775808"):
+        result = integer(value)
+        assert isinstance(result, Safe)  # nosec B101 - test assertion
+        assert str(result) == value  # nosec B101 - test assertion
+
+
+def test_integer_rejects_twenty_digit_strings():
+    """integer() must reject numeric strings with twenty digits, signed or not."""
+    with pytest.raises(UnsafeSQLError):
+        integer("12345678901234567890")
+    with pytest.raises(UnsafeSQLError):
+        integer("-12345678901234567890")
+
+
 @pytest.mark.parametrize("payload", ["x' OR 1=1 --", "it's", "'"])
 def test_regex_rejects_embedded_single_quote(payload):
     """regex() must reject values containing ' even if the pattern matches.
