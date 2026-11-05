@@ -129,6 +129,18 @@ def test_integer_rejects_injection(payload):
         integer(payload)
 
 
+def test_integer_preserves_zero():
+    """integer() must emit 0 for both int and numeric-string zero."""
+    assert str(integer(0)) == "0"  # nosec B101 - test assertion
+    assert str(integer("0")) == "0"  # nosec B101 - test assertion
+
+
+def test_integer_preserves_negative_values():
+    """integer() must preserve the sign of negative int and numeric-string values."""
+    assert str(integer(-42)) == "-42"  # nosec B101 - test assertion
+    assert str(integer("-42")) == "-42"  # nosec B101 - test assertion
+
+
 @pytest.mark.parametrize("payload", ["x' OR 1=1 --", "it's", "'"])
 def test_regex_rejects_embedded_single_quote(payload):
     """regex() must reject values containing ' even if the pattern matches.
