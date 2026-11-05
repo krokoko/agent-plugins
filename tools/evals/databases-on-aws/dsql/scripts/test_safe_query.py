@@ -129,6 +129,18 @@ def test_integer_rejects_injection(payload):
         integer(payload)
 
 
+def test_integer_preserves_large_positive_values():
+    """integer() must not lose precision on values beyond 2**53."""
+    assert str(integer(9007199254740993)) == "9007199254740993"  # nosec B101 - test assertion
+    assert str(integer("9007199254740993")) == "9007199254740993"  # nosec B101 - test assertion
+
+
+def test_integer_preserves_large_negative_values():
+    """integer() must not lose precision on negative values beyond -(2**53)."""
+    assert str(integer(-9007199254740993)) == "-9007199254740993"  # nosec B101 - test assertion
+    assert str(integer("-9007199254740993")) == "-9007199254740993"  # nosec B101 - test assertion
+
+
 @pytest.mark.parametrize("payload", ["x' OR 1=1 --", "it's", "'"])
 def test_regex_rejects_embedded_single_quote(payload):
     """regex() must reject values containing ' even if the pattern matches.
